@@ -4,19 +4,31 @@ new Vue({
 		class1: 'destaque',
 		perigo: true,
 		classDigitada: '',
-		trueFalse: false
+		trueFalse: false,
+		style: {
+			width: '100px',
+			height: '100px',
+			backgroundColor: 'red'
+		},
+		cor: '',
+		width: '0',
+
 	},
 	methods: {
+		startProgress(){
+			let valor = 0
+			 const temp = setInterval(()=>{
+				valor += 5;
+				this.width = `${valor}%`
+				if(valor == 100 ){
+					clearInterval(temp)
+				}
+			},500)
+		},
 		iniciarEfeito() {
 			setInterval(()=>{
 				this.class1 = this.class1 == 'destaque' ? 'escolher' : 'destaque'
 			})
-
-		},
-		iniciarProgresso() {
-
-		},
-		methodCss(){
 
 		},
 		setPerigo(e){

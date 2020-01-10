@@ -27,3 +27,12 @@
 .c2{
 	background-color: blue;
 }
+.barra-progresso{
+	height: 30px;
+	width: 500px;
+	border: 1px solid #000;
+}
+.progress{
+	background-color: red;
+	height: 100%;
+}
