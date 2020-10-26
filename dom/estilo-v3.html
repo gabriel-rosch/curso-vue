@@ -12,7 +12,7 @@
     display: flex;
     justify-content: space-between;
   }
-  .c1 {
+  .cor-1 {
     background-color: red;
   }
   .c2 {
@@ -29,7 +29,7 @@
   <div class="caixas">
     <div class="demo" :class="estilo1" @click="aplicarC1 = !aplicarC1"></div>
     <div class="demo"></div>
-    <div class="demo" :class="[classeCSS, {girar: aplicarGirar}]"></div>
+    <div class="demo" :class="[classeCSS, {girar: aplicarGirar}]" @click="aplicarGirar = !aplicarGirar"></div>
   </div>
   <hr />
   <input type="text" v-model="classeCSS" />
@@ -46,7 +46,7 @@
     computed: {
       estilo1() {
         return {
-          c1: this.aplicarC1,
+          'cor-1': this.aplicarC1,
           c2: !this.aplicarC1
         };
       }
