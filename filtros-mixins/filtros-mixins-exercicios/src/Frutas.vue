@@ -1,28 +1,17 @@
-<tamplate>
+<template>
   <div>
     <ul>
-      <li v-for="fruta in frutas">
-        {{ fruta }}
-      </li>
+      <li v-for="fruta in frutas"> {{ fruta }} </li>
       <input type="text" v-model="fruta" @keydown.enter="add">
     </ul>
   </div>
-</tamplate>
+</template>
 
 <script>
+import frutasMixin from "@/frutasMixin";
+
 export default {
-  data() {
-    return {
-      fruta: '',
-      frutas: ['banana','maça', 'laranja']
-    }
-  },
-  methods: {
-    add() {
-      this.frutas.push(this.fruta)
-      this.fruta = ''
-    }
-  }
+  mixins: [frutasMixin],
 }
 </script>
 <style>
